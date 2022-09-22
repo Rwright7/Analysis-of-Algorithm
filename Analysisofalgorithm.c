@@ -4,6 +4,7 @@
 
 
 int menu();
+void pauseConsole();
 void Bubble_Sort();
 void Quick_Sort();
 void Selection_Sort();
@@ -15,11 +16,11 @@ int main()
 {
 	int choice;
 	
-	system("cls");
+	system("clear");
 	do
 	{
-		choice=menu();
-	system("cls");
+		choice = menu();
+	system("clear");
 		switch(choice)
 		{
 			case 1:
@@ -63,31 +64,35 @@ int menu()
 	
 }
 
+void pauseConsole(void)
+{
+  fputs("Press <ENTER> to continue...", stdout);
+  getchar();
+}
+
 void Bubble_Sort()
 {
 	int arr1[15000];
 	int arr2[65000];
 	int arr3[150000];
-	//data type for calculating time
-	clock_t begin, end;
-	//variable for storing total time of execution for each dataset
-	double time1,time2, time3;
-	//variables used in loops and algorithm
+	
+	clock_t begin, end;  //data type for calculating time
+	double time1,time2, time3;  //variable for storing total time of execution for each dataset
 	int x, i, y=0, min, temp;
-	//populating array with dataset 1
-	printf("\n============ Unsorted array dataset ============ 1:\n");
+	
+	printf("\n============ Unsorted array dataset ============ 1:\n"); //populating array with dataset 1
 	for(i=0;i<15000;i++)
 	{
-		//displaying unsorted array
-		for(i=0;i<15000;i++)
+		
+		for(i=0;i<15000;i++) //displaying unsorted array
 		{
-			//populating array with random numbers
-			arr1[i]=rand();
+			
+			arr1[i]=rand();  //populating array with random numbers
 			printf("\n============ Index %d::Element %d ============\n", i, arr1[i]);
 		}
-		system("pause");
+		pauseConsole();
 			//bubble sort begins
-			begin = clock();//variable to mark the starting time of sorting
+			begin = clock(); //variable to mark the starting time of sorting
 			printf("\n\n============ Dataset 1 Clock started at: %f ============\n", (float)begin);
 				
 		for(i=0;i<=15000-2;i++)
@@ -104,24 +109,25 @@ void Bubble_Sort()
 			}		
 	}
 	end = clock();
-	system("\npause");	
+	pauseConsole();	
 	printf("\n============ Dataset 1 Clock ended at: %f ============\n", (float)end);
 	time1 = ((double)(end - begin))/CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 1 is:%f ============\n", time1);
-	system("\npause");
+	pauseConsole();
+		
 	//Sorted array
 	printf("\n============ Sorted array dataset 1 is: ============\n");
-	system("\npause");
+	pauseConsole();
 	for(i=0; i<15000; i++)
 	{
 		printf("\n============ Index %d::Element %d ============\n",i, arr1[i]);
 	}	
 }
 
-system("pause");
+pauseConsole();
 //populating arrays with dataset 2
 	printf("\n============ Unsorted array dataset 2 is: ============\n");
-	system("pause");
+	pauseConsole();
 	for(i=0;i<65000;i++)
 	{
 		//displaying unsorted array
@@ -131,11 +137,11 @@ system("pause");
 			arr2[i]=rand();
 			printf("\n============ Index %d::Element %d ============\n", i, arr2[i]);
 		}
-		system("pause");
+		pauseConsole();
 			//bubble sort begins
 			begin = clock();//variable to mark the starting time of sorting
 			printf("\n\n============ Dataset 2 Clock started at:%f =============\n", (float)begin);
-			system("pause");	
+			pauseConsole();	
 		for(i=0;i<65000;i++)
 		{
 			
@@ -156,21 +162,22 @@ system("pause");
 	printf("\n============= Dataset 2 Clock ended at:%f ============\n", (float)end);
 	time2 = ((double)(end - begin))/CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 2 is:%f ============\n", time2);
-	system("pause");
+	pauseConsole();
+		
 	//Sorted array
 	printf("\n");
 	printf("============ Sorted array dataset 2 is:: ============\n");
-	system("pause");
+	pauseConsole();
 	for(i=0; i<65000; i++)
 	{
 		printf("\n============ Index %d::Element %d ============\n",i, arr2[i]);
 	}	
 }
-	system("pause");
+	pauseConsole();
 	
 	//populating arrays with dataset 3
 	printf("\n============ Unsorted array dataset 3 is: ============\n");
-	system("pause");
+	pauseConsole();
 	for(i=0;i<150000;i++)
 	{
 		//displaying unsorted array
@@ -180,7 +187,7 @@ system("pause");
 			arr3[i]=rand();
 			printf("\n============ Index %d::Element %d ============\n", i, arr3[i]);
 		}
-		system("pause");
+		pauseConsole();
 			//bubble sort begins
 			begin = clock();//variable to mark the starting time of sorting
 			printf("\n============ Dataset 3 Clock started at:%f =============\n", (float)begin);	
@@ -200,14 +207,14 @@ system("pause");
 		
 	}
 	end = clock();
-	system("pause");	
+	pauseConsole();	
 	printf("\n============ Dataset 3 Clock ended at: %f ============\n", (float)end);
 	time3 = ((double)(end - begin))/CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 3 is: %f ============\n", time3);
-	system("pause");
+	pauseConsole();
 	//Sorted array
 	printf("\n============ Sorted array dataset 3 is:: ============\n");
-	system("pause");
+	pauseConsole();
 	for(i=0; i<150000; i++)
 	{
 		printf("\n============ Index %d::Element %d ============\n\n",i, arr3[i]);
