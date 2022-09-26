@@ -78,16 +78,16 @@ void Bubble_Sort()
 	
 	clock_t begin, end;  //data type for calculating time
 	double time1,time2, time3;  //variable for storing total time of execution for each dataset
-	int x, i, y=0, min, temp;
+	int x, i, y = 0, min, temp;
 	
 	printf("\n============ Unsorted array dataset ============ 1:\n"); //populating array with dataset 1
-	for(i=0;i<15000;i++)
+	for(i = 0; i < 15000; i++)
 	{
 		
-		for(i=0;i<15000;i++) //displaying unsorted array
+		for(i = 0; i < 15000; i++) //displaying unsorted array
 		{
 			
-			arr1[i]=rand();  //populating array with random numbers
+			arr1[i] = rand();  //populating array with random numbers
 			printf("\n============ Index %d::Element %d ============\n", i, arr1[i]);
 		}
 		pauseConsole();
@@ -95,15 +95,15 @@ void Bubble_Sort()
 			begin = clock(); //variable to mark the starting time of sorting
 			printf("\n\n============ Dataset 1 Clock started at: %f ============\n", (float)begin);
 				
-		for(i=0;i<=15000-2;i++)
+		for(i = 0; i <= 15000 - 2; i++)
 		{
-			for(y=0;y<=15000-1-i;y++)
+			for(y = 0; y <= 15000 - 1 - i; y++)
 			{
-				if(arr1[y]>arr1[y+1])
+				if(arr1[y] > arr1[y+1])
 				{
-					temp=arr1[y];
-					arr1[y]=arr1[y+1];
-					arr1[y+1]=temp;	
+					temp = arr1[y];
+					arr1[y] = arr1[y+1];
+					arr1[y+1] = temp;	
 				}
 			
 			}		
@@ -111,14 +111,14 @@ void Bubble_Sort()
 	end = clock();
 	pauseConsole();	
 	printf("\n============ Dataset 1 Clock ended at: %f ============\n", (float)end);
-	time1 = ((double)(end - begin))/CLOCKS_PER_SEC;
+	time1 = ((double)(end - begin)) / CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 1 is:%f ============\n", time1);
 	pauseConsole();
 		
 	//Sorted array
 	printf("\n============ Sorted array dataset 1 is: ============\n");
 	pauseConsole();
-	for(i=0; i<15000; i++)
+	for(i = 0; i < 15000; i++)
 	{
 		printf("\n============ Index %d::Element %d ============\n",i, arr1[i]);
 	}	
@@ -128,13 +128,13 @@ pauseConsole();
 //populating arrays with dataset 2
 	printf("\n============ Unsorted array dataset 2 is: ============\n");
 	pauseConsole();
-	for(i=0;i<65000;i++)
+	for(i = 0; i < 65000; i++)
 	{
 		//displaying unsorted array
-		for(i=0;i<65000;i++)
+		for(i = 0; i < 65000; i++)
 		{
 			//populating array with random numbers
-			arr2[i]=rand();
+			arr2[i] = rand();
 			printf("\n============ Index %d::Element %d ============\n", i, arr2[i]);
 		}
 		pauseConsole();
@@ -142,16 +142,16 @@ pauseConsole();
 			begin = clock();//variable to mark the starting time of sorting
 			printf("\n\n============ Dataset 2 Clock started at:%f =============\n", (float)begin);
 			pauseConsole();	
-		for(i=0;i<65000;i++)
+		for(i = 0; i < 65000; i++)
 		{
 			
-			for(y=0;y<=65000-1-i;y++)
+			for(y = 0; y <= 65000 - 1 - i; y++)
 			{
-					if(arr2[y]>arr2[y+1])
+					if(arr2[y] > arr2[y+1])
 				{
-					temp=arr2[y];
-					arr2[y]=arr2[y+1];
-					arr2[y+1]=temp;	
+					temp = arr2[y];
+					arr2[y] = arr2[y+1];
+					arr2[y+1] = temp;	
 				}
 			
 			}		
@@ -160,7 +160,7 @@ pauseConsole();
 	end = clock();
 	//system("\npause");	
 	printf("\n============= Dataset 2 Clock ended at:%f ============\n", (float)end);
-	time2 = ((double)(end - begin))/CLOCKS_PER_SEC;
+	time2 = ((double)(end - begin)) / CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 2 is:%f ============\n", time2);
 	pauseConsole();
 		
@@ -168,7 +168,7 @@ pauseConsole();
 	printf("\n");
 	printf("============ Sorted array dataset 2 is:: ============\n");
 	pauseConsole();
-	for(i=0; i<65000; i++)
+	for(i = 0; i < 65000; i++)
 	{
 		printf("\n============ Index %d::Element %d ============\n",i, arr2[i]);
 	}	
@@ -178,29 +178,29 @@ pauseConsole();
 	//populating arrays with dataset 3
 	printf("\n============ Unsorted array dataset 3 is: ============\n");
 	pauseConsole();
-	for(i=0;i<150000;i++)
+	for(i = 0; i < 150000; i++)
 	{
 		//displaying unsorted array
-		for(i=0;i<150000;i++)
+		for(i = 0; i < 150000; i++)
 		{
 			//populating array with random numbers
-			arr3[i]=rand();
+			arr3[i] = rand();
 			printf("\n============ Index %d::Element %d ============\n", i, arr3[i]);
 		}
 		pauseConsole();
 			//bubble sort begins
 			begin = clock();//variable to mark the starting time of sorting
 			printf("\n============ Dataset 3 Clock started at:%f =============\n", (float)begin);	
-		for(i=0;i<150000;i++)
+		for(i = 0; i < 150000; i++)
 		{
 			//min=i;
-			for(y=0;y<=150000-1-i;y++)
+			for(y = 0; y <= 150000 - 1 - i; y++)
 			{
-					if(arr3[y]>arr3[y+1])
+					if(arr3[y] > arr3[y+1])
 				{
-					temp=arr3[y];
-					arr3[y]=arr3[y+1];
-					arr3[y+1]=temp;	
+					temp = arr3[y];
+					arr3[y] = arr3[y+1];
+					arr3[y+1] = temp;	
 				}
 			
 			}		
@@ -209,13 +209,13 @@ pauseConsole();
 	end = clock();
 	pauseConsole();	
 	printf("\n============ Dataset 3 Clock ended at: %f ============\n", (float)end);
-	time3 = ((double)(end - begin))/CLOCKS_PER_SEC;
+	time3 = ((double)(end - begin)) / CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 3 is: %f ============\n", time3);
 	pauseConsole();
 	//Sorted array
 	printf("\n============ Sorted array dataset 3 is:: ============\n");
 	pauseConsole();
-	for(i=0; i<150000; i++)
+	for(i = 0; i < 150000; i++)
 	{
 		printf("\n============ Index %d::Element %d ============\n\n",i, arr3[i]);
 	}	
@@ -231,27 +231,27 @@ void Quick_Sort()
 		*a=*b;
 		*b=temp;
 	}
+	
 	int arr1[15000];
 	int arr2[65000];
 	int arr3[150000];
-	//data type for calculating time
+	
 	clock_t begin, end;
-	//variable for storing total time of execution for each dataset
 	double time1,time2, time3;
-	//variables used in loops and algorithm
 	int x, i, y, min, temp;
+	
 	//populating array with dataset 1
 	printf("\n============ Unsorted array dataset ============ 1:\n");
-	for(i=0;i<15000;i++)
+	for(i = 0; i < 15000; i++)
 	{
 		//displaying unsorted array
-		for(i=0;i<15000;i++)
+		for(i = 0; i < 15000; i++)
 		{
 			//populating array with random numbers
-			arr1[i]=rand();
+			arr1[i] = rand();
 			printf("\n============ Index %d::Element %d ============\n", i, arr1[i]);
 		}
-		system("pause");
+		pauseConsole();
 			
 			//quick sort begins
 			begin = clock();//variable to mark the starting time of sorting
@@ -268,9 +268,9 @@ void Quick_Sort()
 				
 				//traversing array and comparing
 				//each element with big
-				for(y=low; y<high; y++)
+				for(y = low; y < high; y++)
 				{
-					if(arr1[y]<= big)
+					if(arr1[y] <= big)
 					{
 						//swapping element if it is smaller than big
 						//with the greater element held by x
@@ -287,51 +287,53 @@ void Quick_Sort()
 		}
 		void qSort(int arr1, int low, int high)
 		{
-			if(low<high)
+			if(low < high)
 			{
 				//finding the big element placing elements smaller to the left
 				//elements bigger to the right
-				int partition=part(arr1, low, high);
+				int partition = part(arr1, low, high);
 				
-				qSort(arr1, low, partition-1);
+				qSort(arr1, low, partition - 1);
 				
-				qSort(arr1, partition+1, high);
+				qSort(arr1, partition + 1, high);
 			}
 		}
-		system("pause");				
+		pauseConsole();				
 	
 	end = clock();
-	system("\npause");	
+	pauseConsole();	
 	printf("\n============ Dataset 1 Clock ended at: %f ============\n", (float)end);
 	time1 = ((double)(end - begin))/CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 1 is:%f ============\n", time1);
-	system("\npause");
+	pauseConsole();
+	
 	//Sorted array
 	printf("\n============ Sorted array dataset 1 is: ============\n");
 	system("\npause");
-	for(i=0; i<15000; ++i)
+	for(i = 0; i < 15000; ++i)
 	{
 		printf("\n============ Index %d::Element %d ============\n",i, arr1[i]);
 	}	
 
 
-system("pause");
+pauseConsole();
+	
 //populating arrays with dataset 2
 	printf("\n============ Unsorted array dataset 2 is: ============\n");
-	system("pause");
-	for(i=0;i<65000;i++)
+	pauseConsole();
+	for(i = 0; i < 65000; i++)
 	{
 		//displaying unsorted array
-		for(i=0;i<65000;i++)
+		for(i = 0; i < 65000; i++)
 		{
 			//populating array with random numbers
-			arr2[i]=rand();
+			arr2[i] = rand();
 			printf("\n============ Index %d::Element %d ============\n", i, arr1[i]);
 		}
-		system("pause");
+		pauseConsole();
 			
 		//quick sort begins
-		begin = clock();//variable to mark the starting time of sorting
+		begin = clock();	//variable to mark the starting time of sorting
 		printf("\n\n============ Dataset 1 Clock started at: %f ============\n", (float)begin);
 	
 		//function to find partition position
@@ -341,13 +343,13 @@ system("pause");
 				int big = arr2[high];
 				
 				//variable to hold the greater element
-				int x = (low-1);
+				int x = (low - 1);
 				
 				//traversing array and comparing
 				//each element with big
-				for(y=low; y<high; y++)
+				for(y = low; y < high; y++)
 				{
-					if(arr2[y]<= big)
+					if(arr2[y] <= big)
 					{
 						//swapping element if it is smaller than big
 						//with the greater element held by x
@@ -364,31 +366,31 @@ system("pause");
 	
 		void qSort(int arr2, int low, int high)
 		{
-			if(low<high)
+			if(low < high)
 			{
 				//finding the big element placing elements smaller to the left
 				//elements bigger to the right
-				int partition=part(arr2, low, high);
+				int partition = part(arr2, low, high);
 				
-				qSort(arr2, low, partition-1);
+				qSort(arr2, low, partition - 1);
 				
-				qSort(arr2, partition+1, high);
+				qSort(arr2, partition + 1, high);
 			}
 		}
-	system("pause");
+	pauseConsole();
 	
 	//populating arrays with dataset 3
 	printf("\n============ Unsorted array dataset 3 is: ============\n");
-	system("pause");
-	for(i=0;i<150000;i++)
+	pauseConsole();
+	for(i = 0; i < 150000; i++)
 	{
 		//displaying unsorted array
-		for(i=0;i<150000;i++)
+		for(i = 0; i < 150000; i++)
 		{
 			//populating array with random numbers
-			arr3[i]=rand();
+			arr3[i] = rand();
 			printf("\n============ Index %d::Element %d ============\n", i, arr1[i]);
-			system("pause");
+			pauseConsole();
 			
 			//quick sort begins
 			begin = clock();//variable to mark the starting time of sorting
@@ -401,13 +403,13 @@ system("pause");
 				int big = arr3[high];
 				
 				//variable to hold the greater element
-				int x = (low-1);
+				int x = (low - 1);
 				
 				//traversing array and comparing
 				//each element with big
-				for(y=low; y<high; y++)
+				for(y = low; y < high; y++)
 				{
-					if(arr3[y]<= big)
+					if(arr3[y] <= big)
 					{
 						//swapping element if it is smaller than big
 						//with the greater element held by x
@@ -424,28 +426,29 @@ system("pause");
 		}
 		void qSort(int arr3, int low, int high)
 		{
-			if(low<high)
+			if(low < high)
 			{
 				//finding the big element placing elements smaller to the left
 				//elements bigger to the right
-				int partition=part(arr3, low, high);
+				int partition = part(arr3, low, high);
 				
-				qSort(arr3, low, partition-1);
+				qSort(arr3, low, partition - 1);
 				
-				qSort(arr3, partition+1, high);
+				qSort(arr3, partition + 1, high);
 			}
 		}
 	}
 	end = clock();
-	system("pause");	
+	pauseConsole();	
 	printf("\n============ Dataset 3 Clock ended at: %f ============\n", (float)end);
-	time3 = ((double)(end - begin))/CLOCKS_PER_SEC;
+	time3 = ((double)(end - begin)) / CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 3 is: %f ============\n", time3);
-	system("pause");
+	pauseConsole();
+		
 	//Sorted array
 	printf("\n============ Sorted array dataset 3 is:: ============\n");
-	system("pause");
-	for(i=0; i<150000; i++)
+	pauseConsole();
+	for(i = 0; i < 150000; i++)
 	{
 		printf("\n============ Index %d::Element %d ============\n\n",i, arr3[i]);
 	}	
@@ -458,149 +461,155 @@ void Selection_Sort()
 	int arr1[15000];
 	int arr2[65000];
 	int arr3[150000];
-	//data type for calculating time
+	
 	clock_t begin, end;
-	//variable for storing total time of execution for each dataset
 	double time1,time2, time3;
-	//variables used in loops and algorithm
 	int x, i, y=0, min, temp;
+	
 	//populating arrays with datasets of 15000, 65000 and 150000
 	printf("\n============ Unsorted array dataset ============ 1:\n");
-	for(i=0;i<15000;i++)
+	for(i = 0; i < 15000; i++)
 	{
 		//displaying unsorted array
-		for(i=0;i<15000;i++)
+		for(i = 0; i < 15000; i++)
 		{
 			//populating array with random numbers
-			arr1[i]=rand();
+			arr1[i] = rand();
 			printf("\n============ Index %d::Element %d ============\n", i, arr1[i]);
 		}
-		system("pause");
+		pauseConsole();
+		
 			//selection sort begins
-			begin = clock();//variable to mark the starting time of sorting
+			begin = clock(); //variable to mark the starting time of sorting
 			printf("\n\n============ Dataset 1 Clock started at: %f ============\n", (float)begin);
-			system("pause");	
-		for(i=0;i<15000;i++)
+			pauseConsole();	
+		for(i = 0; i < 15000; i++)
 		{
 			min=i;
-			for(y=i+1;y<15000;y++)
+			for(y = i + 1; y < 15000; y++)
 			{
-				if(arr1[i]>arr1[y])
+				if(arr1[i] > arr1[y])
 				{
-					temp=arr1[i];
-					arr1[i]=arr1[y];
-					arr1[y]=temp;	
+					temp = arr1[i];
+					arr1[i] = arr1[y];
+					arr1[y] = temp;	
 				}
 			
 			}		
 	}
 	end = clock();
-	system("pause");	
+	pauseConsole();	
 	printf("\n============ Dataset 1 Clock ended at: %f ============\n", (float)end);
-	time1 = ((double)(end - begin))/CLOCKS_PER_SEC;
+	time1 = ((double)(end - begin)) / CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 1:%f ============\n", time1);
-	system("pause");
+	pauseConsole();
+		
 	//Sorted array
 	printf("\n============ Sorted array dataset 1: ============\n");
-	system("pause");
-	for(i=0; i<y; i++)
+	pauseConsole();
+	for(i = 0; i < y; i++)
 	{
 		printf("\n============ Index %d::Element %d ============\n",i, arr1[i]);
 	}	
 }
 
-system("pause");
+pauseConsole();
 
 //populating arrays with dataset
 	printf("\n============ Unsorted array dataset 2 is: ============\n");
-	system("pause");
-	for(i=0;i<65000;i++)
+	pauseConsole();
+	for(i = 0; i < 65000; i++)
 	{
 		//displaying unsorted array
-		for(i=0;i<65000;i++)
+		for(i = 0; i < 65000; i++)
 		{
 			//populating array with random numbers
-			arr2[i]=rand();
+			arr2[i] = rand();
 			printf("\n============ Index %d::Element %d ============\n", i, arr2[i]);
 		}
-		system("pause");
+		pauseConsole();
+		
 			//selection sort begins
-			begin = clock();//variable to mark the starting time of sorting
+			begin = clock();  //variable to mark the starting time of sorting
 			printf("\n\n============ Dataset 2 Clock started at:%f =============\n", (float)begin);
-			system("pause");	
-		for(i=0;i<65000;i++)
+			pauseConsole();
+		
+		for(i = 0; i < 65000; i++)
 		{
 			min=i;
-			for(y=i+1;y<65000;y++)
+			for(y = i + 1; y < 65000; y++)
 			{
-				if(arr2[i]>arr2[y])
+				if(arr2[i] > arr2[y])
 				{
-					temp=arr2[i];
-					arr2[i]=arr2[y];
-					arr2[y]=temp;	
+					temp = arr2[i];
+					arr2[i] = arr2[y];
+					arr2[y] = temp;	
 				}
 			
 			}	
 		
 	}
 	end = clock();
-	system("\npause");	
+	pauseConsole();	
 	printf("\n============= Dataset 2 Clock ended at:%f ============\n", (float)end);
-	time2 = ((double)(end - begin))/CLOCKS_PER_SEC;
+	time2 = ((double)(end - begin)) / CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 2:%f ============\n", time2);
-	system("pause");
+	pauseConsole();
+		
 	//Sorted array
 	printf("\n");
 	printf("============ Sorted array dataset 2 is:: ============\n");
-	system("pause");
-	for(i=0; i<y; i++)
+	pauseConsole();
+	for(i = 0; i < y; i++)
 	{
 		printf("\n============ Index %d::Element %d ============\n",i, arr2[i]);
 	}	
 }
 
-	system("pause");
+	pauseConsole();
 	
 	//populating arrays with dataset
 	printf("\n============ Unsorted array dataset 3 is: ============\n");
-	system("pause");
-	for(i=0;i<150000;i++)
+	pauseConsole();
+	for(i = 0; i < 150000; i++)
 	{
 		//displaying unsorted array
-		for(i=0;i<150000;i++)
+		for(i = 0; i < 150000; i++)
 		{
 			//populating array with random numbers
-			arr3[i]=rand();
+			arr3[i] = rand();
 			printf("\n============ Index %d::Element %d ============\n", i, arr3[i]);
 		}
-		system("pause");
+		pauseConsole();
+		
 			//selection sort begins
 			begin = clock();//variable to mark the starting time of sorting
 			printf("\n============ Dataset 3 Clock started at:%f =============\n", (float)begin);	
-		for(i=0;i<150000;i++)
+		for(i = 0; i < 150000; i++)
 		{
 			min=i;
-			for(y=i+1;y<150000;y++)
+			for(y = i + 1; y < 150000; y++)
 			{
-				if(arr3[i]>arr3[y])
+				if(arr3[i] > arr3[y])
 				{
-					temp=arr3[i];
-					arr3[i]=arr3[y];
-					arr3[y]=temp;	
+					temp = arr3[i];
+					arr3[i] = arr3[y];
+					arr3[y] = temp;	
 				}
 			
 			}		
 	}
 	end = clock();
-	system("\npause");	
+	pauseConsole();
 	printf("\n============ Dataset 3 Clock ended at: %f ============\n", (float)end);
-	time3 = ((double)(end - begin))/CLOCKS_PER_SEC;
+	time3 = ((double)(end - begin)) / CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 3 is:%f ============\n", time3);
-	system("pause");
+	pauseConsole();
+		
 	//Sorted array
 	printf("\n============ Sorted array dataset 3 is:: ============\n");
-	system("pause");
-	for(i=0; i<y; i++)
+	pauseConsole();
+	for(i = 0; i < y; i++)
 	{
 		printf("\n============ Index %d::Element %d ============\n\n",i, arr3[i]);
 	}	
@@ -611,85 +620,87 @@ system("pause");
 
 void Insertion_Sort()
 {
-		int arr1[15000];
+	int arr1[15000];
 	int arr2[65000];
 	int arr3[150000];
-	//data type for calculating time
+	
 	clock_t begin, end;
-	//variable for storing total time of execution for each dataset
 	double time1,time2, time3;
-	//variables used in loops and algorithm
 	int x, i, y=0, min, temp;
+	
 	//populating array with dataset 1
 	printf("\n============ Unsorted array dataset ============ 1:\n");
-	for(i=0;i<15000;i++)
+	for(i = 0; i < 15000; i++)
 	{
 		//displaying unsorted array
-		for(i=0;i<15000;i++)
+		for(i = 0; i < 15000; i++)
 		{
 			//populating array with random numbers
-			arr1[i]=rand();
+			arr1[i] = rand();
 			printf("\n============ Index %d::Element %d ============\n", i, arr1[i]);
 		}
-		system("pause");
+		pauseConsole();
 			//insertion sort begins
 			begin = clock();//variable to mark the starting time of sorting
 			printf("\n\n============ Dataset 1 Clock started at: %f ============\n", (float)begin);
 				
-		for(i=1;i<=15000-1;i++)
+		for(i = 1; i <= 15000 - 1; i++)
 		{
-			y=i;
-			while(y>0 && arr1[y]<arr1[y-1])
+			y = i;
+			while(y > 0 && arr1[y] < arr1[y - 1])
 			{
-				temp=arr1[y];
-				arr1[y]=arr1[y-1];
-				arr1[y-1]=temp;
+				temp = arr1[y];
+				arr1[y] = arr1[y - 1];
+				arr1[y - 1] = temp;
 				y--;
 			}
 			
 			}		
 	
 	end = clock();
-	system("\npause");	
+	pauseConsole();	
 	printf("\n============ Dataset 1 Clock ended at: %f ============\n", (float)end);
-	time1 = ((double)(end - begin))/CLOCKS_PER_SEC;
+	time1 = ((double)(end - begin)) / CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 1 is:%f ============\n", time1);
-	system("\npause");
+	pauseConsole();
+		
 	//Sorted array
 	printf("\n============ Sorted array dataset 1 is: ============\n");
-	system("\npause");
-	for(i=0; i<=15000-1; i++)
+	pauseConsole();
+	for(i = 0; i <= 15000 - 1; i++)
 	{
 		printf("\n============ Index %d::Element %d ============\n",i, arr1[i]);
 	}
 }
 
-system("pause");
+pauseConsole();
+	
 //populating arrays with dataset 2
 	printf("\n============ Unsorted array dataset 2 is: ============\n");
-	system("pause");
-	for(i=0;i<65000;i++)
+	pauseConsole();
+	for(i = 0; i < 65000; i++)
 	{
 		//displaying unsorted array
-		for(i=0;i<65000;i++)
+		for(i = 0; i < 65000; i++)
 		{
 			//populating array with random numbers
-			arr2[i]=rand();
+			arr2[i] = rand();
 			printf("\n============ Index %d::Element %d ============\n", i, arr2[i]);
 		}
-		system("pause");
+		pauseConsole();
+		
 			//bubble sort begins
 			begin = clock();//variable to mark the starting time of sorting
 			printf("\n\n============ Dataset 2 Clock started at:%f =============\n", (float)begin);
-			system("pause");	
-	for(i=1;i<=65000-1;i++)
+			pauseConsole();	
+	for(i = 1; i <= 65000 - 1; i++)
 		{
-			y=i;
-			while(y>0 && arr2[y]<arr2[y-1])
+			y = i;
+			while(y > 0 && arr2[y] < arr2[y - 1])
 			{
-				temp=arr2[y];
-				arr2[y]=arr2[y-1];
-				arr2[y-1]=temp;
+				temp = arr2[y];
+				arr2[y] = arr2[y - 1];
+				arr2[y - 1] = temp;
 				y--;
 			}
 			
@@ -701,57 +712,60 @@ system("pause");
 	printf("\n============= Dataset 2 Clock ended at:%f ============\n", (float)end);
 	time2 = ((double)(end - begin))/CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 2 is:%f ============\n", time2);
-	system("pause");
+	pauseConsole();
+	
 	//Sorted array
 	printf("\n");
 	printf("============ Sorted array dataset 2 is:: ============\n");
-	system("pause");
-	for(i=0; i<=65000-1; i++)
+	pauseConsole();
+	for(i = 0; i <= 65000 - 1; i++)
 	{
 		printf("\n============ Index %d::Element %d ============\n",i, arr2[i]);
 	}	
 
-	system("pause");
+	pauseConsole();
 	
 	//populating arrays with dataset 3
 	printf("\n============ Unsorted array dataset 3 is: ============\n");
-	system("pause");
-	for(i=0;i<150000;i++)
+	pauseConsole();
+	for(i = 0; i < 150000; i++)
 	{
 		//displaying unsorted array
-		for(i=0;i<150000;i++)
+		for(i = 0; i < 150000; i++)
 		{
 			//populating array with random numbers
-			arr3[i]=rand();
+			arr3[i] = rand();
 			printf("\n============ Index %d::Element %d ============\n", i, arr3[i]);
 		}
-		system("pause");
+		pauseConsole();
+		
 			//bubble sort begins
 			begin = clock();//variable to mark the starting time of sorting
 			printf("\n============ Dataset 3 Clock started at:%f =============\n", (float)begin);	
-		for(i=1;i<=150000-1;i++)
+		for(i = 1; i <= 150000 - 1; i++)
 		{
-			y=i;
-			while(y>0 && arr3[y]<arr3[y-1])
+			y = i;
+			while(y > 0 && arr3[y] < arr3[y - 1])
 			{
-				temp=arr3[y];
-				arr3[y]=arr3[y-1];
-				arr3[y-1]=temp;
+				temp = arr3[y];
+				arr3[y] = arr3[y-1];
+				arr3[y - 1] = temp;
 				y--;
 			}
 			
 			}		
 	
 	end = clock();
-	system("pause");	
+	pauseConsole();	
 	printf("\n============ Dataset 3 Clock ended at: %f ============\n", (float)end);
-	time3 = ((double)(end - begin))/CLOCKS_PER_SEC;
+	time3 = ((double)(end - begin)) / CLOCKS_PER_SEC;
 	printf("\n============ Total execution time for dataset 3 is: %f ============\n", time3);
-	system("pause");
+	pauseConsole();
+		
 	//Sorted array
 	printf("\n============ Sorted array dataset 3 is:: ============\n");
-	system("pause");
-	for(i=0; i<150000; i++)
+	pauseConsole();
+	for(i = 0; i < 150000; i++)
 	{
 		printf("\n============ Index %d::Element %d ============\n\n",i, arr3[i]);
 	}
