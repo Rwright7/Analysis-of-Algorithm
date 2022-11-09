@@ -772,9 +772,54 @@ pauseConsole();
 }
 }
 	
-
-void Merge_Sort()
+void Merge (int * array, int left, int mid, int right)
 {
+	int i = 0, Temp_Array[right - left + 1 ];
+	int position = 0, left_Pos = left, right_Pos = mid + 1; 
+	
+		while (left_Pos <= mid && right_Pos <= right)
+		{
+			if (array[left_Pos] < array[right_Pos])
+			{
+				Temp_Array[position++] = array[left_Pos++];
+			}
+			else
+			{
+				Temp_Array[position++] = array[right_Pos++];
+			}
+		}
+	
+		while (left_Pos <= mid)
+		{
+			Temp_Array[position++] = array[left_Pos++];
+		}
+		while (right_Pos <= right)
+		{
+			Temp_Array[position++] = array[right_Pos++];
+		}
+	
+		for (i = 0; i < position; i++)
+		{
+			array[i + left] = Temp_Array[i];
+		}
+return;
+}
+
+void Merge_Sort(int *array, int left, int right)
+{
+	clock_t begin end;
+	double time1, time2, time3;
+	int y = 0, temp, i;
+	int arr1[15000], int arr2[65000], int arr3[150000];
+	int mid = (right + left) / 2;
+	
+	if (left < right)
+	{
+		Merge_Sort(array, left, mid);
+		Merge_Sort(array mid + 1, right);
+		Merge(array, left, mid, right);	
+	}
+	
 	
 }
 
