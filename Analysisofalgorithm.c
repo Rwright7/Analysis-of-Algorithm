@@ -78,7 +78,7 @@ void Bubble_Sort()
 
 	clock_t begin, end;  //data type for calculating time
 	double time1,time2, time3;  //variable for storing total time of execution for each dataset
-	int x, i, y = 0, min, temp;
+	int i, y = 0, temp;
 
 	printf("\n============ Unsorted array dataset ============ 1:\n"); //populating array with dataset 1
 	for(i = 0; i < 15000; i++)
@@ -342,7 +342,7 @@ void qSort_three(int arr3, int low, int high)
 void Quick_Sort()
 {
 	void swap(int *a, int *b);
-
+	int low, high;
 	int arr1[15000];
 	int arr2[65000];
 	int arr3[150000];
@@ -369,9 +369,10 @@ void Quick_Sort()
 		printf("\n\n============ Dataset 1 Clock started at: %f ============\n", (float)begin);
 
 		//function to find partition position
-		int part(int arr1[], int low, int high);
+		 part(&arr1, low, high);
+		
 	}
-	void qSort(int arr1, int low, int high);
+		qSort(&arr1,low,high);
 	pauseConsole();
 
 	end = clock();
@@ -411,8 +412,8 @@ void Quick_Sort()
 		printf("\n\n============ Dataset 2 Clock started at: %f ============\n", (float)begin);
 
 		//function to find partition position
-		int part_two(int arr2[], int low, int high);
-		void qSort_two(int arr2, int low, int high);
+		 part_two(arr2,low, high);
+		qSort_two(arr2,low,high);
 		pauseConsole();
 
 		//populating arrays with dataset 3
@@ -433,9 +434,9 @@ void Quick_Sort()
 				printf("\n\n============ Dataset 1 Clock started at: %f ============\n", (float)begin);
 
 				//function to find partition position
-				int part_three(int arr3[], int low, int high);
+				part_three(arr3, low, high);
 			}
-			void qSort_three(int arr3, int low, int high);
+				qSort_three(arr3, low, high);
 		}
 		end = clock();
 		pauseConsole();
@@ -463,7 +464,7 @@ void Selection_Sort()
 
 	clock_t begin, end;
 	double time1,time2, time3;
-	int x, i, y=0, min, temp;
+	int i, y=0, temp;  //min
 
 	//populating arrays with datasets of 15000, 65000 and 150000
 	printf("\n============ Unsorted array dataset ============ 1:\n");
@@ -484,7 +485,7 @@ void Selection_Sort()
 		pauseConsole();	
 		for(i = 0; i < 15000; i++)
 		{
-			min=i;
+		//	min=i;
 			for(y = i + 1; y < 15000; y++)
 			{
 				if(arr1[i] > arr1[y])
@@ -535,7 +536,7 @@ void Selection_Sort()
 
 		for(i = 0; i < 65000; i++)
 		{
-			min=i;
+		//	min=i;
 			for(y = i + 1; y < 65000; y++)
 			{
 				if(arr2[i] > arr2[y])
@@ -586,7 +587,7 @@ void Selection_Sort()
 		printf("\n============ Dataset 3 Clock started at:%f =============\n", (float)begin);
 		for(i = 0; i < 150000; i++)
 		{
-			min=i;
+		//	min=i;
 			for(y = i + 1; y < 150000; y++)
 			{
 				if(arr3[i] > arr3[y])
@@ -625,7 +626,7 @@ void Insertion_Sort()
 
 	clock_t begin, end;
 	double time1,time2, time3;
-	int x, i, y=0, min, temp;
+	int i, y=0, temp;
 
 	//populating array with dataset 1
 	printf("\n============ Unsorted array dataset ============ 1:\n");
