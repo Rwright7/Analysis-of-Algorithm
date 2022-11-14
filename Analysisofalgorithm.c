@@ -62,7 +62,7 @@ void merge_sort(int len, int arr[len]);
 void heap_sort(int len, int arr[len]);
 
 
-#define ARR_SIZE 10
+#define ARR_SIZE 1000
 
 int main(void)
 {
@@ -172,10 +172,10 @@ int part(int arr[], int low, int high)
 {
     // selecting the upper bound
     const int big = arr[high];
-····
+
     // variable to hold the greater element
     int greaterInd = low - 1;
-····
+
     // traversing array and comparing
     // each element with big
     for (int i = low; i < high; ++i)
@@ -185,7 +185,7 @@ int part(int arr[], int low, int high)
             swap_int(&arr[greaterInd], &arr[i]);
         }   
     }   
-····
+
     // swap the big element with greater element at x
     swap_int(&arr[greaterInd + 1], &arr[high]);
     return greaterInd + 1;
@@ -197,7 +197,7 @@ void qSort(int arr[], int low, int high)
         // finding the big element placing elements smaller to the left
         // elements bigger to the right
         int partition = part(arr, low, high);
-········
+
         qSort(arr, low, partition - 1); 
         qSort(arr, partition + 1, high);
     }   
@@ -208,11 +208,11 @@ void quick_sort(int len, int arr[len])
     time_t begin = time_millisec();
     qSort(arr, 0, len-1);
     time_t end = time_millisec();
-····
+
     printf("============ Sorted array: ============\n");
     array_print(len, arr);
     printf("\n");
-····
+
     printf("On array of %d elements, Quick Sort took %ld[ms].\n", len, end - begin);
 }
 
@@ -230,11 +230,11 @@ void selection_sort(int len, int arr[len])
         }
     }
     time_t end = time_millisec();
-····
+
     printf("============ Sorted array: ============\n");
     array_print(len, arr);
     printf("\n");
-····
+
     printf("On array of %d elements, Selection Sort took %ld[ms].\n", len, end - begin);
 }
 
@@ -249,11 +249,116 @@ void insertion_sort(int len, int arr[len])
         }
     }
     time_t end = time_millisec();
-····
+
     printf("============ Sorted array: ============\n");
     array_print(len, arr);
     printf("\n");
-····
+
     printf("On array of %d elements, Insertion Sort took %ld[ms].\n", len, end - begin);
 }
 
+void merge(int array[], int left, int mid, int right, int *mergeMemory)
+{
+    int position = 0, leftPos = left, rightPos = mid + 1;
+
+    while (leftPos <= mid && rightPos <= right)
+    {
+        int *const posInd = (array[leftPos] < array[rightPos]) ? &leftPos : &rightPos;
+        mergeMemory[position++] = array[*posInd];
+        ++(*posInd);
+    }
+
+    while (leftPos <= mid)
+    {
+        mergeMemory[position++] = array[leftPos++];
+    }
+    while (rightPos <= right)
+    {
+        mergeMemory[position++] = array[rightPos++];
+    }
+    for (int i = 0; i < position; i++)
+    {
+        array[i + left] = mergeMemory[i];
+    }
+}
+
+
+void mSort(int *array, int left, int right, int *mergeMemory)
+{
+    int mid = (right + left) / 2;
+    if (left < right)
+    {
+        mSort(array, left, mid, mergeMemory);
+        mSort(array, mid + 1, right, mergeMemory);
+        merge(array, left, mid, right, mergeMemory);
+    }
+}
+
+void merge_sort(int len, int arr[len])
+{
+    time_t begin = time_millisec();
+    int *mergeMem = calloc(len, sizeof(int));
+    mSort(arr, 0, len-1, mergeMem);
+    free(mergeMem);
+    time_t end = time_millisec();
+
+    printf("============ Sorted array: ============\n");
+    array_print(len, arr);
+    printf("\n");
+
+    printf("On array of %d elements, Merge Sort took %ld[ms].\n", len, end - begin);
+}
+
+void heapify(int arr[], int len, int i)
+{
+	//Find the largest amongst parent, left child and right child.·
+
+	//Parent
+	int largest = i;
+
+	int left_child = 2 * i + 1;
+	int right_child = 2 * i + 2;
+
+	if (left_child < len && arr[left_child] > arr[largest])
+	{
+		largest = left_child;
+	}
+
+	if (right_child < len && arr[right_child] > arr[largest])
+	{
+		largest = right_child;
+	}
+
+	if (largest != i)
+	{
+		swap_int(&arr[i], &arr[largest]);
+
+		heapify(arr, len, largest);
+	}
+
+}
+
+void heap_sort(int len, int arr[len])
+{
+	time_t begin = time_millisec();
+
+	//Build max heap
+	for (int i = len / 2 - 1; i >= 0; i--)
+	{
+		heapify(arr, len, i);
+	}
+	
+	//heap sort
+	for (int i = len - 1; i >= 0; i--)
+	{
+		swap_int(&arr[0], &arr[i]);
+		heapify(arr, i, 0);
+	}
+	
+	time_t end = time_millisec();
+	printf("============ Sorted array: ============\n");
+	array_print(len, arr);
+	printf("\n");
+
+	printf("On array of %d elements, Heap Sort took %ld[ms].\n", len, end - begin);
+}
