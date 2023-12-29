@@ -7,13 +7,13 @@ This command-line program implements various sorting algorithms and provides a r
 To compile the program, ensure that you have a C compiler installed on your system. Use the following commands:
 
 ```bash
-gcc -o sorting_program sorting_program.c
+gcc -o Analysisofalgorithm Analysisofalgorithm.c
 ```
 
 To run the program, use:
 
 ```bash
-./sorting_program
+./Analysisofalgorithm
 ```
 
 ## Usage
